@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notepad</title>
+	<style type="text/css">
+		body
+		{
+			background-color: black;
+		}
+		#centre_box
+		{
+			margin: 0px auto;
+			border-radius: 10px;
+			width: 800px;
+			height: 600px;
+			border: 2px solid white;
+		}
+		#heading
+		{
+			text-align: center;
+			color: yellow;
+			border: 2px solid red;
+			border-style: dashed;
+			border-radius: 20px;
+		}
+		#left_column
+		{
+			position: relative;
+			float: right;
+			width: 150px;
+			border: 2px solid red;
+			border-style: dashed;
+			border-radius: 5px;
+			height: 450px;
+		}
+		#right_column
+		{
+			width: 500px;
+			position: relative;
+			left: 30px;
+			height: 400px;
+			overflow: auto;
+			background-color: white;
+			border: 2px solid green;
+		}
+		.notes
+		{
+			background-color: white;
+			overflow: auto;
+			color: black;
+			padding: 5px;
+			border: 2px solid red;
+			border-style: dashed;
+		}
+		.options
+		{
+			text-align:center;
+			background-color: white;
+			color: black;
+			width: 100px;
+			border-radius: 20px;
+			margin: 0px auto;
+		}
+		a
+		{
+			text-decoration: none;
+			color: black;
+		}
+	</style>
+</head>
+<body>
+<div id="centre_box">
+	<br>
+	<div id="heading">
+		<h1>NOTEPAD</h1>
+	</div>
+	<br>
+	<div id="left_column">
+		<br>
+		<br>
+		<div class ="options">
+			<a href="/create">
+				Create
+			</a>
+		</div>
+		<br>
+		<br>
+		<div class ="options">
+			<a href="/delete">
+				Delete
+			</a>
+		</div>
+		<br>
+		<br>
+		<div class ="options">
+			<a href="/update">
+				Update
+			</a>
+		</div>
+	</div>
+	<div id="right_column">
+		<% note.forEach(function(note){ %>
+	
+			<div class="notes">
+				ID : <%=note._id %>
+				<br>
+				Note : <%=note.note%>
+			</div>
+			<br>
+	 <% }); %>
+	</div>
+</div>
+</body>
+</html>
