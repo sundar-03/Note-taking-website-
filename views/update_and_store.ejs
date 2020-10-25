@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+	<style type="text/css">
+		#old_note
+		{
+			width: 500px;
+			height: 500px;
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	The previous data of notes is :
+	<br>
+	The id is :
+	<br>
+	<%=note._id%>
+	<br>
+	<div id="old_note">
+		<center>
+			<%=note.note %>
+		</center>
+	</div>
+	<br>
+	<form method="post" action="/update_data">
+		<label>
+			Id
+		</label>
+		<br>
+		<input type="text" name="id" placeholder="id" required>
+		<br>
+		<label>
+			The new note
+		</label>
+		<br>
+		<textarea type="text" name="note" placeholder="New notes"></textarea>
+		<br>
+		<input type="submit" name="Add note">
+	</form>
+</body>
+</html>
